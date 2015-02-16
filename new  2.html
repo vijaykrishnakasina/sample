@@ -1,0 +1,1615 @@
+<html>
+<head>
+<title>ApiCategoryChanges</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/layout.css"
+	type="text/css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/styles.css"
+	type="text/css">
+<style>
+{
+color
+
+
+:
+
+
+#2e6e9e
+
+
+;
+}
+</style>
+<script
+	src="${pageContext.request.contextPath}/resources/js/jquery-1.11.1.min.js">
+</script>
+
+<script>
+
+
+$(document).ready(function(){
+	
+	$(".dataDiv").hide();
+	$("#retrieveStatusParamsDiv").show();
+	fillMethods();
+	fillRetrieveStatusParams();
+	fillTriggerFirmwareUpdateParams();
+	fillResetDeviceParams();
+	fillDeRegisterDeviceParams();
+	fillRegisterDeviceParams();
+	fillGetCollarStatusParams();
+	fillGetBatteryAlertStatusParams();
+	fillGetActivityDetailsParams();
+	fillGetLocationDetailsParams();
+	fillgetOverallActivityParams();
+	fillBurstFrequencyControlParams();
+	fillSwitchRadioToConnectedStateParams();
+	fillPushBoundingBoxLocationsParams();
+	fillPushGestureSequenceParams();
+	
+	
+	fillGetDogActivityByTagIdParams();
+	fillGetMostRecentDogActivityParams();
+	fillGetAddressParams();
+	fillGetBatteryStatusAndAlertsByTagIdParams();
+	fillGetTagsNearByParams();
+	fillGetTagsInGivenAreaByRadiusSearchParams();
+	fillGetTagsNearByRadiusSearchOverTimeParams();
+	fillPostUserLocationParams();
+	fillGetDogActivitiesByDateRangeParams();
+	fillSaveTemporaryVisitedLocationsParams();
+	fillSavePermanentLocationsParams();
+	fillSaveGeofencingCoordinatesParams();
+	fillSaveDogStatusParams();
+	fillGetDogActivitiesParams();
+	
+
+	
+	
+	
+	var ip = $("#serverIP").val();
+	var port = $("#serverPort").val();
+	var api = $("#selectedAPI").val();
+	var methodName = $("#selectedMethod").val();
+	var auth = $("#auth").val();
+	var callType = $("#callType").val();
+	var params = $("#"+methodName+"Params").val();
+	var queryParams = "IP:" + ip + "&&PORT:" + port + "&&API:" + api
+				+ "&&METHOD:" + methodName + "&&PARAMS:" + params + "&&AUTH:"
+				+ auth + "&&CALLTYPE:" + callType;
+		$("#queryParams").val(queryParams);
+		
+
+});
+
+function fillRetrieveStatusParams(){
+		refreshResponse();
+		$("#retrieveStatusParams").val("ID#"+$("#retrieveStatusParamsTagId").val()+"||CID#"+$("#retrieveStatusParamsCmdId").val()+"||TOKEN#"+$("#retrieveStatusParamsToken").val());
+
+}
+
+
+
+function fillTriggerFirmwareUpdateParams(){
+	refreshResponse();
+	$("#triggerFirmwareUpdateParams").val("ID#"+$("#triggerFirmwareUpdateParamsTagId").val()+"||CID#"+$("#triggerFirmwareUpdateParamsCmdId").val()+"||TOKEN#"+$("#triggerFirmwareUpdateParamsToken").val());
+
+}
+
+function fillResetDeviceParams(){
+	refreshResponse();
+	$("#resetDeviceParams").val("ID#"+$("#resetDeviceParamsTagId").val()+"||CID#"+$("#resetDeviceParamsCmdId").val()+"||TOKEN#"+$("#resetDeviceParamsToken").val());
+
+}
+
+function fillDeRegisterDeviceParams(){
+	refreshResponse();
+	$("#deRegisterDeviceParams").val("ID#"+$("#deRegisterDeviceParamsTagId").val()+"||CID#"+$("#deRegisterDeviceParamsCmdId").val()+"||TOKEN#"+$("#deRegisterDeviceParamsToken").val());
+
+}
+
+function fillRegisterDeviceParams(){
+	refreshResponse();
+	$("#registerDeviceParams").val("ID#"+$("#registerDeviceParamsTagId").val()+"||CID#"+$("#registerDeviceParamsCmdId").val()+"||TOKEN#"+$("#registerDeviceParamsToken").val());
+
+}
+
+function fillGetCollarStatusParams(){
+	refreshResponse();
+	$("#getCollarStatusParams").val("ID#"+$("#getCollarStatusParamsTagId").val()+"||CID#"+$("#getCollarStatusParamsCmdId").val()+"||TOKEN#"+$("#getCollarStatusParamsToken").val());
+
+}
+
+function fillGetBatteryAlertStatusParams(){
+	refreshResponse();
+	$("#getBatteryAlertStatusParams").val("ID#"+$("#getBatteryAlertStatusParamsTagId").val()+"||CID#"+$("#getBatteryAlertStatusParamsCmdId").val()+"||TOKEN#"+$("#getBatteryAlertStatusParamsToken").val());
+
+}
+
+function fillGetActivityDetailsParams(){
+	refreshResponse();
+	$("#getActivityDetailsParams").val("ID#"+$("#getActivityDetailsParamsTagId").val()+"||CID#"+$("#getActivityDetailsParamsCmdId").val()+"||TOKEN#"+$("#getActivityDetailsParamsToken").val());
+
+}
+
+function fillGetLocationDetailsParams(){
+	refreshResponse();
+	$("#getLocationDetailsParams").val("ID#"+$("#getLocationDetailsParamsTagId").val()+"||CID#"+$("#getLocationDetailsParamsCmdId").val()+"||TOKEN#"+$("#getLocationDetailsParamsToken").val());
+
+}
+
+function fillgetOverallActivityParams(){
+	refreshResponse();
+	$("#getOverallActivityParams").val("ID#"+$("#getOverallActivityParamsTagId").val()+"||CID#"+$("#getOverallActivityParamsCmdId").val()+"||TOKEN#"+$("#getOverallActivityParamsToken").val());
+
+}
+
+function fillBurstFrequencyControlParams(){
+	refreshResponse();
+	$("#burstFrequencyControlParams").val("ID#"+$("#burstFrequencyControlParamsTagId").val()+"||CID#"+$("#burstFrequencyControlParamsCmdId").val()+"||TOKEN#"+$("#burstFrequencyControlParamsToken").val());
+
+}
+
+function fillSwitchRadioToConnectedStateParams(){
+	refreshResponse();
+	$("#switchRadioToConnectedStateParams").val("ID#"+$("#switchRadioToConnectedStateParamsTagId").val()+"||CID#"+$("#switchRadioToConnectedStateParamsCmdId").val()+"||TOKEN#"+$("#switchRadioToConnectedStateToken").val()+"||TIME#"+$("#switchRadioToConnectedStateTime").val());
+}
+
+function fillPushBoundingBoxLocationsParams(){
+	refreshResponse();
+	$("#pushBoundingBoxLocationsParams").val("ID#"+$("#pushBoundingBoxLocationsParamsTagId").val()+"||CID#"+$("#pushBoundingBoxLocationsParamsCmdId").val()+"||TOKEN#"+$("#pushBoundingBoxLocationsToken").val());
+}
+
+function fillPushGestureSequenceParams(){
+	refreshResponse();
+	$("#pushGestureSequenceParams").val("ID#"+$("#pushGestureSequenceParamsTagId").val()+"||CID#"+$("#pushGestureSequenceParamsCmdId").val()+"||TOKEN#"+$("#pushGestureSequenceParamsToken").val());
+}
+
+<!-- public api methods-->
+		
+function fillGetDogActivityByTagIdParams(){
+	refreshResponse();
+	$("#getDogActivityByTagIdParams").val("ID#"+$("#getDogActivityByTagIdParamsTagId").val()+"||COUNT#"+$("#getDogActivityByTagIdParamsNoOfRec").val());
+
+}
+
+function fillGetMostRecentDogActivityParams(){
+	refreshResponse();
+	$("#getMostRecentDogActivityParams").val("ID#"+$("#getMostRecentDogActivityParamsTagId").val());
+}
+
+function fillGetAddressParams(){
+	refreshResponse();
+	$("#getAddressParams").val("ID#"+$("#getAddressParamsTagId").val());
+
+}
+
+function fillGetBatteryStatusAndAlertsByTagIdParams(){
+	refreshResponse();
+	$("#getBatteryStatusAndAlertsByTagIdParams").val("ID#"+$("#getBatteryStatusAndAlertsByTagIdParamsTagId").val());
+}
+
+<!--End of default public api methods -->
+
+
+function fillGetTagsNearByParams(){
+	refreshResponse();
+	$("#getTagsNearByParams").val("ID#"+$("#getTagsNearByParamsTagId").val()+"||RADIUS#"+$("#getTagsNearByParamsRadius").val());
+}
+
+function fillGetTagsInGivenAreaByRadiusSearchParams(){
+	refreshResponse();
+	$("#getTagsInGivenAreaByRadiusSearchParams").val("RADIUS#"+$("#getTagsInGivenAreaByRadiusSearchParamsRadius").val()+"||LATITUDE#"+$("#getTagsInGivenAreaByRadiusSearchParamsLatitude").val()+"||LONGITUDE#"+$("#getTagsInGivenAreaByRadiusSearchParamsLongitude").val());
+}
+
+
+function fillPostUserLocationParams(){
+	refreshResponse();
+	$("#postUserLocationParams").val("UID#"+$("#postUserLocationParamsUserId").val()+"||LATITUDE#"+$("#postUserLocationParamsLatitude").val()+"||LONGITUDE#"+$("#postUserLocationParamsLongitude").val()+"||UAC#"+$("#postUserLocationParamsUAC").val());
+}
+
+function fillGetDogActivitiesByDateRangeParams(){
+	refreshResponse();
+	$("#getDogActivitiesByDateRangeParams").val("SDATE#"+$("#getDogActivitiesByDateRangeParamsSDate").val()+"||EDATE#"+$("#getDogActivitiesByDateRangeParamsEDate").val()+"||ID#"+$("#getDogActivitiesByDateRangeParamsTagId").val());
+
+}
+
+
+function fillGetTagsNearByRadiusSearchOverTimeParams(){
+	refreshResponse();
+	$("#getTagsNearByRadiusSearchOverTimeParams").val("LATITUDE#"+$("#getTagsNearByRadiusSearchOverTimeParamsLatitude").val()+"||LONGITUDE#"+$("#getTagsNearByRadiusSearchOverTimeParamsLongitude").val()+"||RADIUS#"+$("#getTagsNearByRadiusSearchOverTimeParamsRadius").val()+"||TIME#"+$("#getTagsNearByRadiusSearchOverTimeParamsTime").val());
+
+}
+
+function fillSaveTemporaryVisitedLocationsParams(){
+	refreshResponse();
+	$("#saveTemporaryVisitedLocationsParams").val("UID#"+$("#saveTemporaryVisitedLocationsParamsUserId").val()+"||LOCATION#"+$("#saveTemporaryVisitedLocationsParamsLocationName").val()+"||LATITUDE#"+$("#saveTemporaryVisitedLocationsParamsLatitude").val()+"||LONGITUDE#"+$("#saveTemporaryVisitedLocationsParamsLongitude").val());
+																	  
+}
+
+function fillSavePermanentLocationsParams(){
+	refreshResponse();
+	$("#savePermanentLocationsParams").val("UID#"+$("#savePermanentLocationsParamsUserId").val()+"||LOCATION#"+$("#savePermanentLocationsParamsLocationName").val()+"||LATITUDE#"+$("#savePermanentLocationsParamsLatitude").val()+"||LONGITUDE#"+$("#savePermanentLocationsParamsLongitude").val());
+																	  
+}
+
+function fillSaveGeofencingCoordinatesParams(){
+	refreshResponse();
+	$("#saveGeofencingCoordinatesParams").val("UID#"+$("#saveGeofencingCoordinatesParamsUserId").val()+"||LATITUDE#"+$("#saveGeofencingCoordinatesParamsLatitude").val()+"||LONGITUDE#"+$("#saveGeofencingCoordinatesParamsLongitude").val()+"||WIDTH#"+$("#saveGeofencingCoordinatesParamsWidth").val());
+																	  
+}
+
+function fillSaveDogStatusParams(){
+	refreshResponse();
+	$("#saveDogStatusParams").val("UID#"+$("#saveDogStatusParamsUserId").val()+"||ID#"+$("#saveDogStatusParamsTagId").val()+"||DID#"+$("#saveDogStatusParamsDogId").val());
+																	  
+}
+
+function fillGetDogActivitiesParams(){
+	refreshResponse();
+	$("#getDogActivitiesParams").val("UID#"+$("#getDogActivitiesParamsUserId").val()+"||ID#"+$("#getDogActivitiesParamsTagId").val()+"||DID#"+$("#getDogActivitiesParamsDogId").val()+"||COUNT#"+$("#getDogActivitiesParamsNoOfRec").val());
+																	  
+}
+
+function fillSaveGigyaIdParams(){
+	refreshResponse();
+	$("#saveGigyaIdParams").val("ID#"+$("#saveGigyaIdParamsTagId").val()+"||UID#"+$("#saveGigyaIdParamsUserId").val()+"||GIGYAID#"+$("#saveGigyaIdParamsGigyaId").val());
+																	  
+}
+
+function fillSaveGestureSequencesToTagParams(){
+	refreshResponse();
+	$("#saveGestureSequencesToTagParams").val("ID#"+$("#saveGestureSequencesToTagParamsTagId").val()+"||GESTUREID#"+$("#saveGestureSequencesToTagParamsGestureId").val());
+																	  
+}
+
+function fillShowEventStatusParams(){
+	refreshResponse();
+	$("#showEventStatusParams").val("ID#"+$("#showEventStatusParamsTagId").val()+"||COUNT#"+$("#showEventStatusCount").val());
+																	  
+}
+
+function fillTagActivationParams(){
+	refreshResponse();
+	$("#tagActivationParams").val("ID#"+$("#tagActivationParamsTagId").val()+"||GIGYAID#"+$("#tagActivationParamsGigyaId").val());
+																	  
+}
+
+function fillUserFirstLoginParams(){
+	refreshResponse();
+	$("#userFirstLoginParams").val("ID#"+$("#userFirstLoginParamsTagId").val()+"||ICCID#"+$("#userFirstLoginParamsIccid").val());
+																	  
+}
+
+function fillSaveGestureSequencesParams(){
+	refreshResponse();
+	$("#saveGestureSequencesParams").val("GESTUREID#"+$("#saveGestureSequencesParamsGestureId").val()+"||SEQ#"+$("#saveGestureSequencesParamsSequence").val());
+																	  
+}
+
+
+function fillOAuthTokenParams(){
+	refreshResponse();
+	$("#oAuthTokenParams").val("CLIENTID#"+$("#oAuthTokenParamsClientId").val()+"||CLIENTSECRET#"+$("#oAuthTokenParamsClientSecret").val());
+																	  
+}
+
+
+function fillUserCredentialDetailsParams(){
+	refreshResponse();
+	$("#userCredentialDetailsParams").val("TYPE#"+$("#userCredentialDetailsParamsType").val()+"||USERNAME#"+$("#userCredentialDetailsUsername").val()+"||PASSWORD#"+$("#userCredentialDetailsPassword").val()+"||ROLENAME#"+$("#userCredentialDetailsRolename").val());
+}
+
+
+function refreshResponse(){
+	
+	$("#response").val("");
+}
+
+	function fillMethods() {
+
+		var api = $("#selectedAPI").val();
+		
+		var privateMethods = '<option value="oAuthToken">OAuth Token</option><option value="retrieveStatus">Retrieve Status</option><option value="triggerFirmwareUpdate">TriggerFirmwareUpdate</option><option value="resetDevice">ResetDevice</option><option value="deRegisterDevice">DeRegisterDevice</option><option value="registerDevice">RegisterDevice</option><option value="getCollarStatus">GetCollarStatus</option><option value="getBatteryAlertStatus">GetBatteryAlertStatus</option><option value="getActivityDetails">GetActivityDetails</option><option value="getLocationDetails">GetLocationDetails</option><option value="getOverallActivity">GetOverallActivity</option><option value="burstFrequencyControl">BurstFrequencyControl</option><option value="switchRadioToConnectedState">SwitchRadioToConnectedState</option><option value="pushBoundingBoxLocations">PushBoundingBoxLocations</option><option value="pushGestureSequence">PushGestureSequence</option>';
+		
+		var publicMethods = '<option value="getDogActivityByTagId">GetDogActivityByTagId</option><option value="getMostRecentDogActivity">GetMostRecentDogActivity</option><option value="getAddress">GetAddress</option><option value="getTagsNearBy">GetTagsNearBy</option><option value="postUserLocation">PostUserLocation</option><option value="getTagsInGivenAreaByRadiusSearch">GetTagsInGivenAreaByRadiusSearch</option><option value="getTagsNearByRadiusSearchOverTime">GetTagsNearByRadiusSearchOverTime</option><option value="getDogActivitiesByDateRange">GetDogActivitiesByDateRange</option><option value="saveTemporaryVisitedLocations">SaveTemporaryVisitedLocations</option><option value="savePermanentLocations">SavePermanentLocations</option><option value="saveGeofencingCoordinates">SaveGeofencingCoordinates</option><option value="saveDogStatus">SaveDogStatus</option><option value="getDogActivities">GetDogActivities</option><option value="saveGigyaId">SaveGigyaId</option><option value="saveGestureSequencesToTag">SaveGestureSequencesToTag</option><option value="showEventStatus">ShowEventStatus</option><option value="tagActivation">TagActivation</option><option value="userFirstLogin">UserFirstLogin</option><option value="saveGestureSequences">SaveGestureSequences</option><option value="userCredentialDetails">UserCredentialDetails</option>';
+		
+		$("#selectedMethod").empty();
+		if (api == "PrivateAPI") {
+
+			$("#selectedMethod").html(privateMethods);
+
+			
+		}
+		if (api == "PublicAPI") {
+
+			$("#selectedMethod").html(publicMethods);
+		}
+		
+		fillMethodParams();
+		
+	}
+
+	function fillMethodParams() {
+		var val = $('#selectedMethod').val();
+		var selectedDiv = val + "ParamsDiv";
+		var selectedToken = val + "ParamsToken";
+		$(".dataDiv").hide();
+		$("#"+selectedToken).val("");
+		$("#"+selectedDiv).show();
+		refreshResponse();
+		switch(val) {
+			case "oAuthToken":
+			case "retrieveStatus":
+			case "triggerFirmwareUpdate":
+			case "resetDevice":
+			case "deRegisterDevice":
+			case "registerDevice":
+			case "getCollarStatus":
+			case "getBatteryAlertStatus":
+			case "getActivityDetails":
+			case "getLocationDetails":
+			case "getOverallActivity":
+			case "burstFrequencyControl":
+			case "switchRadioToConnectedState":	
+			case "pushGestureSequence":
+			case "pushBoundingBoxLocations":
+			
+			
+			case "getDogActivityByTagId":
+			case "getDogActivitiesByDateRange":
+			case "getMostRecentDogActivity":
+			case "getAddress":
+			case "postUserLocation":
+			case "getTagsInGivenAreaByRadiusSearch":
+			case "getTagsNearByRadiusSearchOverTime":			
+			case "getTagsNearBy":
+			case "saveDogStatus":
+			case "getDogActivities":
+			case "saveGigyaId":
+			case "saveGestureSequencesToTag":
+			case "showEventStatus":
+			case "tagActivation":
+			case "userFirstLogin":$("#callType").val("GET");break;
+			
+			case "getBatteryStatusAndAlertsByTagId":
+			case "saveGeofencingCoordinates":
+			case "savePermanentLocations":
+			case "saveTemporaryVisitedLocations":
+			case "saveGestureSequences":
+			case "userCredentialDetails":$("#callType").val("POST");break;
+			
+			default:
+        
+		}
+		
+		
+
+	}
+
+	function fillResponse() {
+		var ip = $("#serverIP").val();
+		var port = $("#serverPort").val();
+		var api = $("#selectedAPI").val();
+		var methodName = $("#selectedMethod").val();
+		var auth = $("#auth").val();
+		var callType = $("#callType").val();
+		
+		var params = $("#"+methodName+"Params").val();
+		if(!ip){
+			alert("IP Address is not valid");
+		}
+		else if(!port){
+			alert ("PORT value is not valid")
+		}
+		else{
+		var queryParams = "IP:" + ip + "&&PORT:" + port + "&&API:" + api
+				+ "&&METHOD:" + methodName + "&&PARAMS:" + params + "&&AUTH:"
+				+ auth + "&&CALLTYPE:" + callType;
+		$("#queryParams").val(queryParams);
+		$.ajax({
+
+			url : 'getResponse',
+
+			method : 'get',
+
+			ContentType : 'json',
+
+			data : {
+
+				queryParams : queryParams
+
+			},
+
+			success : function(response) {
+				$('#response').val(response);
+				//alert($('#response').html());
+
+			},
+			error : function() {
+				alert('Please fill all fields');
+			}
+
+		});
+			
+		}
+
+	}
+</script>
+
+<style>
+.dataTables {
+	width: 65%;
+}
+</style>
+
+</head>
+<body style="margin-left: 25%">
+	<p>&nbsp;</p>
+	<input id="queryParams" type="hidden" />
+	<input id="callType" type="hidden" value="GET" />
+	<div style="color: #2e6e9e; font-weight: bold;">
+		<h2text-align:center;>API Category Changes</h2>
+	</div>
+
+	</br>
+	<table height="121" id="tableForm" class="dataTables" width="50%">
+		<tr>
+			<td>IP Address : <input id="serverIP" type="text"
+				value="localhost" />
+			</td>
+			<td>Port : <input id="serverPort" type="text" value="8080" />
+			</td>
+		</tr>
+	</table>
+	</br>
+	<table height="121" id="tableForm" class="dataTables" width="50%">
+
+
+
+		<tbody>
+
+
+
+			<tr>
+				<div style="color: #2e6e9e; font-weight: bold;">
+					<h3>Request:</h3>
+				</div>
+			</tr>
+			<tr>
+				<div style="color: #2e6e9e; font-weight: bold;">
+					<td>Authentication Type :<select id="auth">
+							<option value="admin">Admin</option>
+							<option value="user">User</option>
+					</select></td>
+				</div>
+			</tr>
+			<tr>
+
+
+				<td>API Type: <select id="selectedAPI" onchange="fillMethods()">
+						<option value="PrivateAPI">Private API</option>
+						<option value="PublicAPI">Public API</option>
+				</select> -- <select id="selectedMethod" onchange="fillMethodParams()">
+						<option value="oAuthToken">OAuth Token</option>
+						<option value="retrieveStatus">Retrieve Status</option>
+						<option value="triggerFirmwareUpdate">Trigger Firmware Update</option>
+						<option value="resetDevice">Reset Device</option>
+						<option value="deRegisterDevice">De-Register Device</option>
+						<option value="registerDevice">Register Device</option>
+						<option value="getCollarStatus">Get CollarStatus</option>
+						<option value="getBatteryAlertStatus">Get Battery Alert	Status</option>
+						<option value="getActivityDetails">Get Activity Details</option>
+						<option value="getLocationDetails">Get Location Details</option>
+						<option value="getOverallActivity">Get Overall Activity</option>
+						<option value="burstFrequencyControl">Burst Frequency Control</option>
+						<option value="pushGestureSequence">Push Gesture Sequence</option>
+						<option value="pushBoundingBoxLocations">Push BoundingBox Locations</option>
+				</select>
+				</td>
+				<td></td>
+
+
+
+
+			</tr>
+
+		</tbody>
+	</table>
+	
+	<div id="oAuthTokenParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>ClientID :<input type="text" id="oAuthTokenParamsClientId"
+						onchange="fillOAuthTokenParams()" /></td>
+
+				</tr>
+				
+				<tr align="center">
+					<td>Client Secret :<input type="text" id="oAuthTokenParamsClientSecret"
+						onchange="fillOAuthTokenParams()" /></td>
+
+				</tr>
+
+				
+			</tbody>
+		</table>
+		<input id="oAuthTokenParams" type="hidden" />
+
+	</div>
+
+	<div id="retrieveStatusParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="retrieveStatusParamsTagId"
+						onchange="fillRetrieveStatusParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text" id="retrieveStatusParamsToken"
+						onchange="fillRetrieveStatusParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="retrieveStatusParamsCmdId" type="hidden" value="100" /> <input
+			id="retrieveStatusParams" type="hidden" />
+
+	</div>
+
+	<div id="triggerFirmwareUpdateParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id : <select id="triggerFirmwareUpdateParamsTagId"
+						onchange="fillTriggerFirmwareUpdateParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="triggerFirmwareUpdateParamsToken"
+						onchange="fillTriggerFirmwareUpdateParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="triggerFirmwareUpdateParamsCmdId" type="hidden" value="101" />
+		<input id="triggerFirmwareUpdateParams" type="hidden" />
+	</div>
+
+	<div id="resetDeviceParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id : <select id="resetDeviceParamsTagId"
+						onchange="fillResetDeviceParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text" id="resetDeviceParamsToken"
+						onchange="fillResetDeviceParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+
+		<input id="resetDeviceParamsCmdId" type="hidden" value="102" /> <input
+			id="resetDeviceParams" type="hidden" />
+	</div>
+
+	<div id="deRegisterDeviceParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="deRegisterDeviceParamsTagId"
+						onchange="fillDeRegisterDeviceParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text" id="deRegisterDeviceParamsToken"
+						onchange="fillDeRegisterDeviceParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="deRegisterDeviceParamsCmdId" type="hidden" value="103" />
+		<input id="deRegisterDeviceParams" type="hidden" />
+	</div>
+
+	<div id="registerDeviceParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="registerDeviceParamsTagId"
+						onchange="fillRegisterDeviceParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text" id="registerDeviceParamsToken"
+						onchange="fillRegisterDeviceParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="registerDeviceParamsCmdId" type="hidden" value="104" /> <input
+			id="registerDeviceParams" type="hidden" />
+	</div>
+
+	<div id="getCollarStatusParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getCollarStatusParamsTagId"
+						onchange="fillGetCollarStatusParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text" id="getCollarStatusParamsToken"
+						onchange="fillGetCollarStatusParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getCollarStatusParamsCmdId" type="hidden" value="105" /> <input
+			id="getCollarStatusParams" type="hidden" />
+	</div>
+
+	<div id="getBatteryAlertStatusParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getBatteryAlertStatusParamsTagId"
+						onchange="fillGetBatteryAlertStatusParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="getBatteryAlertStatusParamsToken"
+						onchange="fillGetBatteryAlertStatusParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getBatteryAlertStatusParamsCmdId" type="hidden" value="106" />
+		<input id="getBatteryAlertStatusParams" type="hidden" />
+	</div>
+
+	<div id="getActivityDetailsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getActivityDetailsParamsTagId"
+						onchange="fillGetActivityDetailsParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="getActivityDetailsParamsToken"
+						onchange="fillGetActivityDetailsParams()" /></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<input id="getActivityDetailsParamsCmdId" type="hidden" value="107" />
+		<input id="getActivityDetailsParams" type="hidden" />
+	</div>
+
+	<div id="getLocationDetailsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getLocationDetailsParamsTagId"
+						onchange="fillGetLocationDetailsParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="getLocationDetailsParamsToken"
+						onchange="fillGetLocationDetailsParams()" /></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getLocationDetailsParamsCmdId" type="hidden" value="108" />
+		<input id="getLocationDetailsParams" type="hidden" />
+	</div>
+
+	<div id="getOverallActivityParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getOverallActivityParamsTagId"
+						onchange="fillgetOverallActivityParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="getOverallActivityParamsToken"
+						onchange="fillgetOverallActivityParams()" /></td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getOverallActivityParamsCmdId" type="hidden" value="109" />
+		<input id="getOverallActivityParams" type="hidden" />
+	</div>
+
+	<div id="burstFrequencyControlParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="burstFrequencyControlParamsTagId"
+						onchange="fillBurstFrequencyControlParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="burstFrequencyControlParamsToken"
+						onchange="fillBurstFrequencyControlParams()" /></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="burstFrequencyControlParamsCmdId" type="hidden" value="110" />
+		<input id="burstFrequencyControlParams" type="hidden" />
+	</div>
+
+	<div id="switchRadioToConnectedStateParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select
+						id="switchRadioToConnectedStateParamsTagId"
+						onchange="fillSwitchRadioToConnectedStateParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Time Period:<input type="text"
+						id="switchRadioToConnectedStateTime"
+						onchange="fillSwitchRadioToConnectedStateParams()" /></td>
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="switchRadioToConnectedStateToken"
+						onchange="fillSwitchRadioToConnectedStateParams()" /></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="switchRadioToConnectedStateParamsCmdId" type="hidden"
+			value="111" /> <input id="switchRadioToConnectedStateParams"
+			type="hidden" />
+	</div>
+
+	<div id="pushBoundingBoxLocationsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="pushBoundingBoxLocationsParamsTagId"
+						onchange="fillPushBoundingBoxLocationsParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="pushBoundingBoxLocationsToken"
+						onchange="fillPushBoundingBoxLocationsParams()" /></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="pushBoundingBoxLocationsParamsCmdId" type="hidden"
+			value="112" /> <input id="pushBoundingBoxLocationsParams"
+			type="hidden" />
+	</div>
+
+	<div id="pushGestureSequenceParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="pushGestureSequenceParamsTagId"
+						onchange="fillPushGestureSequenceParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Token :<input type="text"
+						id="pushGestureSequenceParamsToken"
+						onchange="fillPushGestureSequenceParams()" /></td>
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="pushGestureSequenceParamsCmdId" type="hidden" value="113" />
+		<input id="pushGestureSequenceParams" type="hidden" />
+	</div>
+
+	<!--  public api methods -->
+
+
+
+	<div id="saveDogStatusParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+
+				<tr align="center">
+					<td>User ID:<input type="text" id="saveDogStatusParamsUserId"
+						onchange="fillSaveDogStatusParams()" />
+
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>Tag Id :<select id="saveDogStatusParamsTagId"
+						onchange="fillSaveDogStatusParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Dog ID :<input type="text" id="saveDogStatusParamsDogId"
+						onchange="fillSaveDogStatusParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="saveDogStatusParams" type="hidden" />
+	</div>
+
+
+	<div id="getDogActivitiesParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+
+				<tr align="center">
+					<td>User ID:<input type="text"
+						id="getDogActivitiesParamsUserId"
+						onchange="fillGetDogActivitiesParams()" />
+
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>Tag Id :<select id="getDogActivitiesParamsTagId"
+						onchange="fillGetDogActivitiesParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Dog ID :<input type="text"
+						id="getDogActivitiesParamsDogId"
+						onchange="fillGetDogActivitiesParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>No. of Records :<input type="text"
+						id="getDogActivitiesParamsNoOfRec"
+						onchange="fillGetDogActivitiesParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getDogActivitiesParams" type="hidden" />
+	</div>
+
+
+	<div id="getDogActivityByTagIdParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getDogActivityByTagIdParamsTagId"
+						onchange="fillGetDogActivityByTagIdParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>No. Of Records :<input type="text"
+						id="getDogActivityByTagIdParamsNoOfRec"
+						onchange="fillGetDogActivityByTagIdParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getDogActivityByTagIdParams" type="hidden" />
+	</div>
+
+	<div id="getMostRecentDogActivityParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getMostRecentDogActivityParamsTagId"
+						onchange="fillGetMostRecentDogActivityParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="getMostRecentDogActivityParams" type="hidden" />
+	</div>
+
+	<div id="getAddressParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getAddressParamsTagId"
+						onchange="fillGetAddressParams()">
+							<option value="1111567891234567891">1111567891234567891</option>
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+					</select></td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="getAddressParams" type="hidden" />
+	</div>
+
+	<div id="getBatteryStatusAndAlertsByTagIdParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select
+						id="getBatteryStatusAndAlertsByTagIdParamsTagId"
+						onchange="fillGetBatteryStatusAndAlertsByTagIdParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
+		<input id="getBatteryStatusAndAlertsByTagIdParams" type="hidden" />
+	</div>
+
+	<!-- End of default public methods -->
+
+	<div id="tagActivationParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="tagActivationParamsTagId"
+						onchange="fillTagActivationParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Gigya Id :<input type="text"
+						id="tagActivationParamsGigyaId"
+						onchange="fillTagActivationParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="tagActivationParams" type="hidden" />
+	</div>
+
+	<div id="userFirstLoginParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				
+				<tr align="center">
+					<td>User Id :<input type="text" id="userFirstLoginParamsTagId"
+						onchange="fillUserFirstLoginParams()" /></td>
+
+				</tr>
+				<tr align="center">
+					<td>Iccid :<input type="text" id="userFirstLoginParamsIccid"
+						onchange="fillUserFirstLoginParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="userFirstLoginParams" type="hidden" />
+	</div>
+
+	<div id="saveGigyaIdParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="saveGigyaIdParamsTagId"
+						onchange="fillSaveGigyaIdParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+				<tr align="center">
+					<td>User Id :<select id="saveGigyaIdParamsUserId"
+						onchange="fillSaveGigyaIdParams()">
+							<option value="U01">U01</option>
+							<option value="U02">U02</option>
+
+					</select>
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>Gigya Id :<input type="text" id="saveGigyaIdParamsGigyaId"
+						onchange="fillSaveGigyaIdParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="saveGigyaIdParams" type="hidden" />
+	</div>
+
+	<div id="saveGestureSequencesToTagParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="saveGestureSequencesToTagParamsTagId"
+						onchange="fillSaveGestureSequencesToTagParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Gesture Id :<input type="text"
+						id="saveGestureSequencesToTagParamsGestureId"
+						onchange="fillSaveGestureSequencesToTagParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="saveGestureSequencesToTagParams" type="hidden" />
+	</div>
+
+
+	<div id="showEventStatusParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="showEventStatusParamsTagId"
+						onchange="fillShowEventStatusParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Event Id :<input type="text" id="showEventStatusCount"
+						onchange="fillShowEventStatusParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="showEventStatusParams" type="hidden" />
+	</div>
+
+
+
+
+	<div id="getTagsNearByParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select id="getTagsNearByParamsTagId"
+						onchange="fillGetTagsNearByParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+					</select></td>
+
+				</tr>
+				<tr align="center">
+					<td>Radius :<input type="text" id="getTagsNearByParamsRadius"
+						onchange="fillGetTagsNearByParams()" /></td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getTagsNearByParams" type="hidden" />
+	</div>
+
+
+
+	<div id="getTagsInGivenAreaByRadiusSearchParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+
+				<tr align="center">
+					<td>Latitude :<input type="text"
+						id="getTagsInGivenAreaByRadiusSearchParamsLatitude"
+						onchange="fillGetTagsInGivenAreaByRadiusSearchParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Longitude :<input type="text"
+						id="getTagsInGivenAreaByRadiusSearchParamsLongitude"
+						onchange="fillGetTagsInGivenAreaByRadiusSearchParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Radius :<input type="text"
+						id="getTagsInGivenAreaByRadiusSearchParamsRadius"
+						onchange="fillGetTagsInGivenAreaByRadiusSearchParams()" /></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<input id="getTagsInGivenAreaByRadiusSearchParams" type="hidden" />
+	</div>
+
+
+	<div id="getTagsNearByRadiusSearchOverTimeParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Latitude :<input type="text"
+						id="getTagsNearByRadiusSearchOverTimeParamsLatitude"
+						onchange="fillGetTagsNearByRadiusSearchOverTimeParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Longitude :<input type="text"
+						id="getTagsNearByRadiusSearchOverTimeParamsLongitude"
+						onchange="fillGetTagsNearByRadiusSearchOverTimeParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Radius :<input type="text"
+						id="getTagsNearByRadiusSearchOverTimeParamsRadius"
+						onchange="fillGetTagsNearByRadiusSearchOverTimeParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Time :<input type="text"
+						id="getTagsNearByRadiusSearchOverTimeParamsTime"
+						onchange="fillGetTagsNearByRadiusSearchOverTimeParams()" /></td>
+
+				</tr>
+			</tbody>
+		</table>
+		<input id="getTagsNearByRadiusSearchOverTimeParams" type="hidden" />
+	</div>
+
+
+	<div id="postUserLocationParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>User Id :<select id="postUserLocationParamsUserId"
+						onchange="fillGetBatteryStatusAndAlertsByTagIdParams()">
+							<option value="U01">U01</option>
+							<option value="U02">U02</option>
+
+					</select>
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>Latitude :<input type="text"
+						id="postUserLocationParamsLatitude"
+						onchange="fillPostUserLocationParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>Longitude :<input type="text"
+						id="postUserLocationParamsLongitude"
+						onchange="fillPostUserLocationParams()" /></td>
+
+				</tr>
+
+				<tr align="center">
+					<td>User Activiy Code :<input type="text"
+						id="postUserLocationParamsUAC"
+						onchange="fillPostUserLocationParams()" /></td>
+
+				</tr>
+
+
+
+
+			</tbody>
+		</table>
+		<input id="postUserLocationParams" type="hidden" />
+	</div>
+
+	<div id="getDogActivitiesByDateRangeParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Tag Id :<select
+						id="getDogActivitiesByDateRangeParamsTagId"
+						onchange="fillGetDogActivitiesByDateRangeParams()">
+							<option value="SDC12345">SDC12345</option>
+							<option value="SDC1">SDC1</option>
+							<option value="1111567891234567891">1111567891234567891</option>
+
+					</select>
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>Start Date :<input
+						id="getDogActivitiesByDateRangeParamsSDate" type="text"
+						onchange="fillGetDogActivitiesByDateRangeParams()" />(YYYYMMDDHHMMSS)</td>
+
+				</tr>
+
+				<tr align="center">
+					<td>End Date :<input
+						id="getDogActivitiesByDateRangeParamsEDate" type="text"
+						onchange="fillGetDogActivitiesByDateRangeParams()" />(YYYYMMDDHHMMSS) </td>
+
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="getDogActivitiesByDateRangeParams" type="hidden" />
+	</div>
+	<!-- post methods -->
+	<div id="saveTemporaryVisitedLocationsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>User Id :<input
+						id="saveTemporaryVisitedLocationsParamsUserId" type="text"
+						onchange="fillSaveTemporaryVisitedLocationsParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Location Name :<input
+						id="saveTemporaryVisitedLocationsParamsLocationName" type="text"
+						onchange="fillSaveTemporaryVisitedLocationsParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Latitude :<input
+						id="saveTemporaryVisitedLocationsParamsLatitude" type="text"
+						onchange="fillSaveTemporaryVisitedLocationsParams()" />
+
+					</td>
+				</tr>
+
+
+
+				<tr align="center">
+					<td>Longitude :<input
+						id="saveTemporaryVisitedLocationsParamsLongitude" type="text"
+						onchange="fillSaveTemporaryVisitedLocationsParams()" />
+
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="saveTemporaryVisitedLocationsParams" type="hidden" />
+	</div>
+
+
+	<div id="savePermanentLocationsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>User Id :<input id="savePermanentLocationsParamsUserId"
+						type="text" onchange="fillSavePermanentLocationsParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Location Name :<input
+						id="savePermanentLocationsParamsLocationName" type="text"
+						onchange="fillSavePermanentLocationsParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Latitude :<input id="savePermanentLocationsParamsLatitude"
+						type="text" onchange="fillSavePermanentLocationsParams()" />
+
+					</td>
+				</tr>
+
+
+
+				<tr align="center">
+					<td>Longitude :<input
+						id="savePermanentLocationsParamsLongitude" type="text"
+						onchange="fillSavePermanentLocationsParams()" />
+
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="savePermanentLocationsParams" type="hidden" />
+	</div>
+
+	<div id="saveGeofencingCoordinatesParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>User Id :<input id="saveGeofencingCoordinatesParamsUserId"
+						type="text" onchange="fillSaveGeofencingCoordinatesParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Latitude :<input
+						id="saveGeofencingCoordinatesParamsLatitude" type="text"
+						onchange="fillSaveGeofencingCoordinatesParams()" />
+
+					</td>
+				</tr>
+
+
+
+				<tr align="center">
+					<td>Longitude :<input
+						id="saveGeofencingCoordinatesParamsLongitude" type="text"
+						onchange="fillSaveGeofencingCoordinatesParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Width :<input id="saveGeofencingCoordinatesParamsWidth"
+						type="text" onchange="fillSaveGeofencingCoordinatesParams()" />
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<input id="saveGeofencingCoordinatesParams" type="hidden" />
+	</div>
+
+	
+	<div id="saveGestureSequencesParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Gesture Id :<input
+						id="saveGestureSequencesParamsGestureId" type="text"
+						onchange="fillSaveGestureSequencesParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Sequence :<input id="saveGestureSequencesParamsSequence"
+						type="text" onchange="fillSaveGestureSequencesParams()" />
+
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="saveGestureSequencesParams" type="hidden" />
+	</div>
+
+	<!--dev -->
+	<div id="userCredentialDetailsParamsDiv" class="dataDiv">
+		<table class="dataTables">
+
+			<tbody>
+				<tr align="center">
+					<td>Type :<select
+						id="userCredentialDetailsParamsType"
+						onchange="fillUserCredentialDetailsParams()">
+							<option value="create">create</option>
+							<option value="update">update</option>
+							<option value="addrole">addrole</option>
+							<option value="deleterole">deleterole</option>
+						
+					</select>
+					</td>
+
+				</tr>
+				<tr align="center">
+					<td>User Name :<input
+						id="userCredentialDetailsUsername" type="text"
+						onchange="fillUserCredentialDetailsParams()" />
+
+					</td>
+				</tr>
+
+				<tr align="center">
+					<td>Password :<input id="userCredentialDetailsPassword"
+						type="text" onchange="fillUserCredentialDetailsParams()" />
+
+					</td>
+				</tr>
+				
+				<tr align="center">
+					<td>Role Name :<input id="userCredentialDetailsRolename"
+						type="text" onchange="fillUserCredentialDetailsParams()" />
+
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<input id="userCredentialDetailsParams" type="hidden" />
+	</div>
+
+
+
+	</br>
+
+	<div style="position: relative; left: 300px;">
+		<input id="submit" type="submit" value="Submit"
+			onclick="fillResponse()" />
+	</div>
+	<br />
+
+	<div style="color: #2e6e9e; font-weight: bold;">
+		<h3>Response:</h3>
+	</div>
+
+	<textarea id="response" rows="20" cols="110"></textarea>
+</body>
+</html>
